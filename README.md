@@ -10,7 +10,7 @@
 &nbsp;&nbsp;
 <a href="https://huggingface.co/spaces/SeaLLMs/SeaLLM-Chat-13b" target="_blank" rel="noopener"> 🤗 DEMO</a>
 &nbsp;&nbsp;
-<a href="https://github.com/SeaLLMs/SeaLLMs" target="_blank" rel="noopener">Github</a>
+<a href="https://github.com/DAMO-NLP-SG/SeaLLMs" target="_blank" rel="noopener">Github</a>
 </p>
 
 We introduce SeaLLMs - a family of language models optimized for Southeast Asian (SEA) languages. The SeaLLM-base models (to be released) were pre-trained from [Llama-2](https://huggingface.co/meta-llama/Llama-2-13b-hf), on a tailored publicly-available dataset, which comprises mainly Vietnamese 🇻🇳, Indonesian 🇮🇩 and Thai 🇹🇭 texts, along with those in English 🇬🇧 and Chinese 🇨🇳. The pre-training stage involves multiple stages with dynamic data control to preserve the original knowledge base of Llama-2 while gaining new abilities in SEA languages.
