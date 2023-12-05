@@ -20,8 +20,10 @@ We introduce SeaLLMs - a family of language models optimized for Southeast Asian
 SeaLLM-13b models exhibit superior performance across a wide spectrum of linguistic tasks and assistant-style instruction-following capabilities relative to comparable open-source models. Moreover, they outperform **ChatGPT-3.5** in non-Latin languages, such as Thai, Khmer, Lao, and Burmese.
 
 - DEMO: [SeaLLMs/SeaLLM-Chat-13b](https://huggingface.co/spaces/SeaLLMs/SeaLLM-Chat-13b)
-- Model weights: To be released.
 - Technical report: [Arxiv: SeaLLMs - Large Language Models for Southeast Asia](https://arxiv.org/pdf/2312.00738.pdf).
+- Model weights:
+  - [SeaLLM-7B-chat](https://huggingface.co/SeaLLMs/SeaLLM-7B-chat): Lower capability than [SeaLLM-13B-Chat](https://huggingface.co/spaces/SeaLLMs/SeaLLM-Chat-13b) but much faster and memory-efficient.
+
 
 <blockquote style="color:red">
 <p><strong style="color: red">Terms of Use and License</strong>: 
