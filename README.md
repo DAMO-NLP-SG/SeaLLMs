@@ -72,7 +72,7 @@ Comparing instruction-following capabilities of models in the angle of different
 
 We also compare our model head-on with ChatGPT in peer comparison, as seen above. SeaLLM-13b is equal or better than ChatGPT for up to 40% of the times for Latin-based languages (Eng, Vie, Ind, Msa). In contrast, for non-Latin languages, our SeaLLM-13b surpasses ChatGPT by up to 90%.
 
-### Safety Enchancement in Local Context
+### Safety Enhancement in Local Context
 
 There is growing [evidence](https://arxiv.org/pdf/2310.06474.pdf) that western-built LLMs often neglect safety protection in many lower-resource languages, or even promote contents that may be locally perceived as harmful, inappropriate or illegal by local norms and laws. We take efforts in adapting and safeguarding our SeaLLM models to achieve greater adoption and compliance for the regional audience of Southeast Asia.
 
