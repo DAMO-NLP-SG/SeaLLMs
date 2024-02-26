@@ -20,9 +20,7 @@
 - [Feb 2, 2024] ⭐️ We introduced SeaLLM-7B-v2 (https://huggingface.co/SeaLLMs/SeaLLM-7B-v2), the state-of-the-art multilingual LLM for Southeast Asian (SEA) languages 🇬🇧 🇨🇳 🇻🇳 🇮🇩 🇹🇭 🇲🇾 🇰🇭 🇱🇦 🇲🇲 🇵🇭. 
 - [Dec 1, 2023] ⭐️ We rolled out SeaLLMs - a family of language models optimized for Southeast Asian (SEA) languages!
 
-<p align="center" width="100%">
-<a target="_blank"><img src="figs/architecture_v2.png" alt="Video-LLaMA" style="width: 80%; min-width: 200px; display: block; margin: auto;"></a>
-</p>
+<hr>
 
 We introduce SeaLLMs - a family of language models optimized for Southeast Asian (SEA) languages. The SeaLLM-base models (to be released) were pre-trained from [Llama-2](https://huggingface.co/meta-llama/Llama-2-13b-hf), on a tailored publicly-available dataset, which comprises texts in Vietnamese 🇻🇳, Indonesian 🇮🇩, Thai 🇹🇭, Malay 🇲🇾, Khmer🇰🇭, Lao🇱🇦, Tagalog🇵🇭 and Burmese🇲🇲. The [SeaLLM-chat](https://huggingface.co/spaces/SeaLLMs/SeaLLM-Chat-13b) underwent supervised finetuning (SFT) and specialized self-preferencing DPO using a mix of public instruction data and a small number of queries used by SEA language native speakers in natural settings, which **adapt to the local cultural norms, customs, styles and laws in these areas**. 
 
