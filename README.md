@@ -6,6 +6,8 @@
 
 
 <p align="center">
+<a href="https://damo-nlp-sg.github.io/SeaLLMs" target="_blank" rel="noopener"> Technical Blog</a>
+&nbsp;&nbsp;
 <a href="https://huggingface.co/SeaLLMs/SeaLLM-Chat-13b" target="_blank" rel="noopener"> 🤗 Tech Memo</a>
 &nbsp;&nbsp;
 <a href="https://huggingface.co/spaces/SeaLLMs/SeaLLM-Chat-13b" target="_blank" rel="noopener"> 🤗 DEMO</a>
@@ -17,8 +19,9 @@
 
 
 ## News
-- [Feb 2, 2024] ⭐️ We introduced SeaLLM-7B-v2 (https://huggingface.co/SeaLLMs/SeaLLM-7B-v2), the state-of-the-art multilingual LLM for Southeast Asian (SEA) languages 🇬🇧 🇨🇳 🇻🇳 🇮🇩 🇹🇭 🇲🇾 🇰🇭 🇱🇦 🇲🇲 🇵🇭. 
-- [Dec 1, 2023] ⭐️ We rolled out SeaLLMs - a family of language models optimized for Southeast Asian (SEA) languages!
+- [April 12, 2024] ⭐️ We released SeaLLM-7B-v2.5 (https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5), the state-of-the-art multilingual LLM with competitive abilities in world knowledge and math reasoning.
+- [Feb 2, 2024] ⭐️ We introduced SeaLLM-7B-v2 (https://huggingface.co/SeaLLMs/SeaLLM-7B-v2), a multilingual LLM for SEA languages with advanced reasoning abilities.
+- [Dec 1, 2023] ⭐️ We rolled out SeaLLMs - a family of language models optimized for Southeast Asian (SEA) languages 🇬🇧 🇨🇳 🇻🇳 🇮🇩 🇹🇭 🇲🇾 🇰🇭 🇱🇦 🇲🇲 🇵🇭. 
 
 <hr>
 
@@ -26,10 +29,12 @@ We introduce SeaLLMs - a family of language models optimized for Southeast Asian
 
 SeaLLM-13b models exhibit superior performance across a wide spectrum of linguistic tasks and assistant-style instruction-following capabilities relative to comparable open-source models. Moreover, they outperform **ChatGPT-3.5** in non-Latin languages, such as Thai, Khmer, Lao, and Burmese.
 
-- DEMO: [SeaLLMs/SeaLLM-Chat-13b](https://huggingface.co/spaces/SeaLLMs/SeaLLM-Chat-13b)
+- DEMO: [SeaLLMs/SeaLLM-7B](https://huggingface.co/spaces/SeaLLMs/SeaLLM-7B)
 - Technical report: [Arxiv: SeaLLMs - Large Language Models for Southeast Asia](https://arxiv.org/pdf/2312.00738.pdf).
 - Model weights:
-  - [SeaLLM-7B-chat](https://huggingface.co/SeaLLMs/SeaLLM-7B-chat): Lower capability than [SeaLLM-13B-Chat](https://huggingface.co/spaces/SeaLLMs/SeaLLM-Chat-13b) but much faster and memory-efficient.
+  - [SeaLLM-7B-v2.5](https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5): Trained from gemma-7b, with state-of-the-art performances in world knowledge and reasoning.
+  - [SeaLLM-7B-v2](https://huggingface.co/SeaLLMs/SeaLLM-7B-v2): Trained from Mistral-7B, with outstanding capabilities in math and commonsense reasoning in SEA languages. 
+  - [SeaLLM-7B-v1](https://huggingface.co/SeaLLMs/SeaLLM-7B-v1): first version of SeaLLMs, Lower capability than [SeaLLM-13B-Chat](https://huggingface.co/spaces/SeaLLMs/SeaLLM-Chat-13b) but much faster and memory-efficient.
 
 
 <blockquote style="color:red">
