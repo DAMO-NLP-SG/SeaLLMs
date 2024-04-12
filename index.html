@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="SeaLLMs - Large Language Models for Southeast Asia">
+  <meta name="keywords" content="SeaLLM, SeaLMMM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SeaLLMs (v2.5) - Large Language Models for Southeast Asia</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon-32x32.png"> -->
+  <link rel="icon" href="./static/images/seal_logo.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <script
+	type="module"
+	src="https://gradio.s3-us-west-2.amazonaws.com/4.19.2/gradio.js"
+  ></script>
+
+  
+
+</head>
+<body>
+
+<!-- @article{damonlpsg2023seallm,
+  author = {Xuan-Phi Nguyen*, Wenxuan Zhang*, Xin Li*, Mahani Aljunied*,
+            Zhiqiang Hu, Chenhui Shen^, Yew Ken Chia^, Xingxuan Li, Jianyu Wang,
+            Qingyu Tan, Liying Cheng, Guanzheng Chen, Yue Deng, Sen Yang,
+            Chaoqun Liu, Hang Zhang, Lidong Bing},
+  title = {SeaLLMs - Large Language Models for Southeast Asia},
+  year = 2023,
+  Eprint = {arXiv:2312.00738},
+} -->
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <img src="./static/images/seal_logo.png" alt="" style="height: 2.5em;">
+            <br>
+            SeaLLMs - Large Language Models for Southeast Asia
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <!-- <a href="https://nxphi47.github.io">Xuan-Phi Nguyen*</a><sup>1</sup>,</span> -->
+              <a href="https://nxphi47.github.io">Xuan-Phi Nguyen</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://isakzhang.github.io">Wenxuan Zhang</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://lixin4ever.github.io">Xin Li</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Mahani Aljunied</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://wwxu21.github.io">Weiwen Xu</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://kenchan0226.github.io">Hou Pong Chan</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://hzq950419.github.io/HomePage/">Zhiqiang Hu</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Chenhui Shen</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://chiayewken.com/">Yew Ken Chia</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://lixin4ever.github.io">Xingxuan Li</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Jianyu Wang</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Qingyu Tan</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Liying Cheng</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Guanzheng Chen</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Yue Deng</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Sen Yang</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Chaoqun Liu</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Hang Zhang</a> &
+            </span>
+            <span class="author-block">
+              <a href="https://lidongbing.github.io">Lidong Bing*</a> (Corresponding Author)
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">DAMO Academy, Alibaba Group</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2312.00738"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="fas fa-file-pdf"></i> -->
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/SeaLLMs/SeaLLM-7B"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      🤗
+                  </span>
+                  <span>DEMO</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/DAMO-NLP-SG/SeaLLMs"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Github</span>
+                  </a>
+              </span>
+              <!-- Models Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/collections/SeaLLMs/seallms-65be16f92e67686440ae29f3"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      🤗
+                  </span>
+                  <span>Models</span>
+                  </a>
+                </span>
+              <!-- darasets Link. -->
+              <!-- <span class="link-block">
+                <a href="https://huggingface.co/datasets/SeaLLMs/Sea-bench"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+                </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h4 class="subtitle has-text-centered">
+        🔥<span style="color: #ff3860">[NEW!]</span> 
+        <a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5">SeaLLM-7B-v2.5</a> is released with SoTA in world knowledge and math reasoning.
+      </h4>
+      <gradio-app src="https://seallms-seallm-7b-v2-5-simple.hf.space"></gradio-app>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce <a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5">SeaLLM-7B-v2.5</a>, the state-of-the-art multilingual LLM for Southeast Asian (SEA) languages 🇬🇧 🇨🇳 🇻🇳 🇮🇩 🇹🇭 🇲🇾 🇰🇭 🇱🇦 🇲🇲 🇵🇭. 
+            It outperforms comparable baselines across diverse multilingual tasks, from world knowledge, math reasoning, instruction following, etc.
+            It also surpasses ChatGPT-3.5 in various knowledge and reasoning bechmarks in multiple non-Latin languages (Thai, Khmer, Lao and Burmese), while remaining lightweight and open-source.
+          </p>
+          <p>
+            <a href="https://huggingface.co/collections/SeaLLMs/seallms-65be16f92e67686440ae29f3">SeaLLMs</a> is a continuously iterated and improved series of language models
+            that specifically focuses on Southeast Asian (SEA) languages. SeaLLMs are typically continue-pretrained and fine-tuned from strong English models to build outstanding
+            capabilities in SEA languages without degrading performances in high-resource languages. SeaLLMs are built with focus in prioritizing local cultural and legal norms, customs, 
+            stylistic preferences, as well as cost-effectiveness
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+<!-- introduction -->
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Introduction</h2>
+  </div>
+</section> -->
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-4">SeaLLM-7B-v2.5 DEMO</h2>
+    <gradio-app src="https://seallms-seallm-7b-v2-5-simple.hf.space"></gradio-app>
+  </div>    
+</section> -->
+
+
+<!-- Evaluation -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- <h2 class="title is-3">Evaluation</h2> -->
+
+    <h2 class="title is-4">World Knowledge</h2>
+    <div class="content has-text-justified">
+      <p>
+        We evaluate models on 3 benchmarks following the recommended default setups: 5-shot MMLU for Eng, 3-shot <a href="https://arxiv.org/pdf/2306.05179.pdf">M3Exam</a>
+        for Eng, Zho, Vie, Ind, Tha, and zero-shot <a href="https://vmlu.ai/">VMLU</a> for Vie.
+      </p>
+      <div class="table-container">
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+          <!-- Your table content -->
+          <tr>
+            <th>Model</th>
+            <th>Langs</th>
+            <th>Eng<br><a href="https://arxiv.org/abs/2009.03300">MMLU</a><br>5 shots</th>
+            <th>Eng<br><a href="https://github.com/DAMO-NLP-SG/M3Exam/tree/main">M3exam</a><br>3 shots</th>
+            <th>Zho<br>M3exam<br>3 shots</th>
+            <th>Vie<br>M3exam<br>3 shots</th>
+            <th>Vie<br><a href="https://vmlu.ai/leaderboard">VMLU</a><br>0 shots</th>
+            <th>Ind<br>M3exam<br>3 shots</th>
+            <th>Tha<br>M3exam<br>3 shots</th>
+          </tr>
+          <tr>
+            <td>ChatGPT-3.5</td>
+            <td>Multi</td>
+            <td><b>68.90</b></td>
+            <td>75.46</td>
+            <td>60.20</td>
+            <td>58.64</td>
+            <td>46.32</td>
+            <td>49.27</td>
+            <td>37.41</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/Viet-Mistral/Vistral-7B-Chat">Vistral-7B-chat</a></td>
+            <td>Mono</td>
+            <td>56.86</td>
+            <td>67.00</td>
+            <td>44.56</td>
+            <td>54.33</td>
+            <td>50.03</td>
+            <td>36.49</td>
+            <td>25.27</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/Qwen/Qwen1.5-7B-Chat">Qwen1.5-7B-chat</a></td>
+            <td>Multi</td>
+            <td>61.00</td>
+            <td>52.07</td>
+            <td><b>81.96</b></td>
+            <td>43.38</td>
+            <td>45.02</td>
+            <td>24.29</td>
+            <td>20.25</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/sail/Sailor-7B">SailorLM-7B</a></td>
+            <td>Multi</td>
+            <td>52.72</td>
+            <td>59.76</td>
+            <td>67.74</td>
+            <td>50.14</td>
+            <td> --- </td>
+            <td>39.53</td>
+            <td>37.73</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2">SeaLLM-7B-v2</a></td>
+            <td>Multi</td>
+            <td>61.89</td>
+            <td>70.91</td>
+            <td>55.43</td>
+            <td>51.15</td>
+            <td>45.74</td>
+            <td>42.25</td>
+            <td>35.52</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5"><b>SeaLLM-7B-v2.5</b></a></td>
+            <td><b>Multi</b></td>
+            <td>64.05</td>
+            <td><b>76.87</b></td>
+            <td>62.54</td>
+            <td><b>63.11</b></td>
+            <td><b>53.30</b></td>
+            <td><b>48.64</b></td>
+            <td><b>46.86</b></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!-- math reasoning -->
+    <h2 class="title is-4">Multilingual Math Reasoning</h2>
+    <div class="content has-text-justified">
+      <p>
+        <a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5"><b>SeaLLM-7B-v2.5</b></a> achieves with 78.5 and 34.9 in GSM8K and MATH with zero-shot CoT reasoning, making it outperforms GPT-3.5 in MATH.
+        It also outperforms GPT-3.5 in all GSM8K and MATH benchmark as translated into 4 SEA languages (🇨🇳 🇻🇳 🇮🇩 🇹🇭). 
+      </p>
+      <div class="table-container">
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+          <!-- Your table content -->
+          <!-- GSM8K-en	MATH-en	GSM8K-zh	MATH-zh	GSM8K-vi	MATH-vi	GSM8K-id	MATH-id	GSM8K-th	MATH-th -->
+          <tr>
+            <th>Model</th>
+            <th>Eng<br>GSM8K</th><th>Eng<br>MATH</th>
+            <th>Zho<br>GSM8K</th><th>Zho<br>MATH</th>
+            <th>Vie<br>GSM8K</th><th>Vie<br>MATH</th>
+            <th>Ind<br>GSM8K</th><th>Ind<br>MATH</th>
+            <th>Tha<br>GSM8K</th><th>Tha<br>MATH</th>
+          </tr>
+          <tr>
+            <td>ChatGPT-3.5</td>
+            <td><b>80.8</b></td>
+            <td>34.1</td>
+            <td>48.2</td>
+            <td>21.5</td>
+            <td>55.0</td>
+            <td>26.5</td>
+            <td>64.3</td>
+            <td>26.4</td>
+            <td>35.8</td>
+            <td>18.1</td>
+          </tr>
+          <tr>
+            <td>Vistral-7B-Chat</td>
+            <td>48.2</td>
+            <td>12.5</td>
+            <td></td>
+            <td></td>
+            <td>48.7</td>
+            <td>3.1</td>
+          </tr>
+          <tr>
+            <td>Qwen1.5-7B-chat</td>
+            <td>56.8</td>
+            <td>15.3</td>
+            <td>40.0</td>
+            <td>2.7</td>
+            <td>37.7</td>
+            <td>9.0</td>
+            <td>36.9</td>
+            <td>7.7</td>
+            <td>21.9</td>
+            <td>4.7</td>
+          </tr>
+          <tr>
+            <td>SeaLLM-7B-v2</td>
+            <td>78.2</td>
+            <td>27.5</td>
+            <td>53.7</td>
+            <td>17.6</td>
+            <td>69.9</td>
+            <td>23.8</td>
+            <td>71.5</td>
+            <td>24.4</td>
+            <td>59.6</td>
+            <td>22.4</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5"><b>SeaLLM-7B-v2.5</b></a></td>
+            <td>78.5</td>
+            <td><b>34.9</b></td>
+            <td><b>51.3</b></td>
+            <td><b>22.1</b></td>
+            <td><b>72.3</b></td>
+            <td><b>30.2</b></td>
+            <td><b>71.5</b></td>
+            <td><b>30.1</b></td>
+            <td><b>62.0</b></td>
+            <td><b>28.4</b></td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+    <!-- Instruction following -->
+    <h2 class="title is-4">Multilingual Instruction Following</h2>
+    <div class="content has-text-justified">
+      <p>
+        <a href="https://huggingface.co/datasets/SeaLLMs/Sea-bench">Sea-Bench</a> is a set of categorized instruction test sets to measure models' ability as an assistant that is specifically focused on 9 SEA languages, 
+        including non-Latin low-resource languages. Sea-Bench's model responses are rated by GPT-4 following MT-bench LLM-judge procedure.
+        <br>
+        As shown, <a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5"><b>SeaLLM-7B-v2.5</b></a> reaches GPT-3.5 level of performance in many common SEA languages (Eng, Zho, Vie, Ind, Tha, Msa) 
+        and far-surpasses it in low-resource non-Latin languages (Mya, Lao, Khm).
+      </p>
+      <!-- <img src="./static/images/fig_sea_bench_side_by_side.png" /> -->
+      <gradio-app src="https://seallms-sea-bench-simple.hf.space"></gradio-app>
+    </div>
+  </div>
+</section>
+
+
+<!-- model information -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- <h2 class="title is-3">Evaluation</h2> -->
+    <h2 class="title is-4">Model Information</h2>
+    <div class="content has-text-justified">
+      <p>
+        All <a href="https://huggingface.co/collections/SeaLLMs/seallms-65be16f92e67686440ae29f3">SeaLLM models</a> underwent continue-pretraining, instruction and alignment tuning to 
+        ensure not only their competitive performances in SEA languages, but also maintain high level of safety and legal compliance.
+        All models are trained with 32 A800 GPUs.
+      </p>
+      <div class="table-container">
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+          <!-- Your table content -->
+          <tr>
+            <th>Model</th>
+            <th>Backbone</th>
+            <th>Context Length</th>
+            <th>Vocab Size</th>
+            <th>Chat format</th>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5">SeaLLM-7B-v2.5</a></td>
+            <td><a href="https://huggingface.co/google/gemma-7b">gemma-7b</a></td>
+            <td>8192</td>
+            <td>256000</td>
+            <td><pre><code><|im_start|>user
+{content}&lt;eos&gt;
+<|im_start|>assistant
+{content}&lt;eos&gt;</code></pre></td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2">SeaLLM-7B-v2</a></td>
+            <td><a href="https://huggingface.co/mistralai/Mistral-7B-v0.1">Mistral-7B-v0.1</a></td>
+            <td>8192</td>
+            <td>48384</td>
+            <td><pre><code><|im_start|>user
+{content}&lt;/s&gt;<|im_start|>assistant
+{content}&lt;/s&gt;</code></pre></td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2">SeaLLM-7B-v1</a></td>
+            <td><a href="https://huggingface.co/meta-llama/Llama-2-7b">Llama-2-7b</a></td>
+            <td>4096</td>
+            <td>48512</td>
+            <td>Same as Llama-2</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Related Links</h2>
+    <div class="content has-text-justified">
+      <p>
+        <a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2">SeaLLM-7B-v2.5</a> was released in April 2024. It possesses outstanding abilities in world knowledge and math reasoning in both English and SEA languages.
+      </p>
+      <p>
+        <a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2">SeaLLM-7B-v2</a> was released in Feb 2024. It possesses outstanding abilities in math and commonsense reasoning in Sea languages.
+      </p>
+      <p>
+        <a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v1">SeaLLM-7B-v1</a> was released in Nov 2023. It was the first release of SeaLLMs model family, and the first LLM built specifically for Southeast Asia.
+      </p>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgement</h2>
+    <p>We would like to express our special thanks to our professional and native linguists, Tantong Champaiboon, Nguyen Ngoc Yen Nhi and Tara Devina Putri, who helped build, evaluate, and fact-check our sampled pretraining and SFT dataset as well as evaluating our models across different aspects, especially safety.</p>
+  </div>
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <p>
+      If you find our project useful, we hope you would kindly star our repo and cite our work as follows.
+      <br>
+      Corresponding Author: <a href= "mailto: l.bing@alibaba-inc.com">l.bing@alibaba-inc.com</a>
+    </p>
+    <pre><code>@article{damonlpsg2023seallm,
+  author = {Xuan-Phi Nguyen*, Wenxuan Zhang*, Xin Li*, Mahani Aljunied*, Weiwen Xu, Hou Pong Chan,
+            Zhiqiang Hu, Chenhui Shen^, Yew Ken Chia^, Xingxuan Li, Jianyu Wang,
+            Qingyu Tan, Liying Cheng, Guanzheng Chen, Yue Deng, Sen Yang,
+            Chaoqun Liu, Hang Zhang, Lidong Bing},
+  title = {SeaLLMs - Large Language Models for Southeast Asia},
+  year = 2023,
+  Eprint = {arXiv:2312.00738},
+}
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/pdf/2312.00738.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/DAMO-NLP-SG/SeaLLMs" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
