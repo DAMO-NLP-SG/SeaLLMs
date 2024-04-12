@@ -1,4 +1,4 @@
-# make sure to use vllm 0.2.7 and transformers 4.36+
+# make sure to use vllm 0.3.3 and transformers 4.40+
 
 import json
 from vllm import LLM, SamplingParams
@@ -15,16 +15,32 @@ def read_json(json_file):
 
 questions = read_json(jsonl_path)
 
+# SeaLLM-7B-v2.5
+# model_path = "SeaLLMs/SeaLLM-7B-v2"
+model_path = "SeaLLMs/SeaLLM-7B-v2.5"
 
-sampling_params = SamplingParams(temperature=0.0, max_tokens=1, stop=["</s>"])
-model_path = "SeaLLMs/SeaLLM-7B-v2"
-model = LLM(model_path, dtype="bfloat16")
-
-# previous commit incorrect put a \n between </s> & <|im_start|>, there should not be any \n between </s> and <|im_start|>
-CHAT_TEMPLATE = """<|im_start|>system
+if model_path == "SeaLLMs/SeaLLM-7B-v2":
+    eos_token = "</s>"
+    CHAT_TEMPLATE = """<|im_start|>system
 You are a helpful assistant.</s><|im_start|>user
 {prompt}</s><|im_start|>assistant
 """
+
+elif model_path == "SeaLLMs/SeaLLM-7B-v2.5":
+    eos_token = "<eos>"
+    CHAT_TEMPLATE = """<|im_start|>user
+{prompt}<eos>
+<|im_start|>assistant
+"""
+
+else:
+    ValueError('invalid model name', model_path)
+
+
+sampling_params = SamplingParams(temperature=0.0, max_tokens=5, stop=[eos_token])
+model = LLM(model_path, dtype="bfloat16")
+
+
 question_template = """Chỉ đưa ra chữ cái đứng trước câu trả lời đúng (A, B, C, D hoặc E) của câu hỏi trắc nghiệm sau:
 
 {question}
@@ -46,7 +62,12 @@ print(prompts[0])
 
 generated = model.generate(prompts, sampling_params)
 responses = [g.outputs[0].text for g in generated]
-answers = [r.strip()[0] for r in responses]
+
+answers = [r.strip() for r in responses]
+# first output can be "A" or " A" (2 different token)
+# extract first character, empty '' if nothing in the answer
+answers = [(r[0] if len(r) > 0 else '') for r in answers]
+
 
 assert len(answers) == len(questions)
 print(answers[:10])
