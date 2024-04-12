@@ -19,7 +19,7 @@
 
 
 ## News
-- [April 12, 2024] ⭐️ We released SeaLLM-7B-v2.5 (https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5), the state-of-the-art multilingual LLM with competitive abilities in world knowledge and math reasoning.
+- [Apr 12, 2024] ⭐️ We released SeaLLM-7B-v2.5 (https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5), the state-of-the-art multilingual LLM with competitive abilities in world knowledge and math reasoning.
 - [Feb 2, 2024] ⭐️ We introduced SeaLLM-7B-v2 (https://huggingface.co/SeaLLMs/SeaLLM-7B-v2), a multilingual LLM for SEA languages with advanced reasoning abilities.
 - [Dec 1, 2023] ⭐️ We rolled out SeaLLMs - a family of language models optimized for Southeast Asian (SEA) languages 🇬🇧 🇨🇳 🇻🇳 🇮🇩 🇹🇭 🇲🇾 🇰🇭 🇱🇦 🇲🇲 🇵🇭. 
 
