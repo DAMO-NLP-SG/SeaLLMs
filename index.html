@@ -451,6 +451,59 @@
       <!-- <img src="./static/images/fig_sea_bench_side_by_side.png" /> -->
       <gradio-app src="https://seallms-sea-bench-simple.hf.space"></gradio-app>
     </div>
+    <!-- commonsense reasoning -->
+    <h2 class="title is-4">Multilingual Zero-shot Commonsense Reasoning</h2>
+    <div class="content has-text-justified">
+      <p>
+        We compare <a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5"><b>SeaLLM-7B-v2.5</b></a> with ChatGPT and Mistral-7B-instruct on various zero-shot commonsense benchmarks (Arc-Challenge, Winogrande and Hellaswag). We use the 2-stage technique in <a href="https://arxiv.org/pdf/2205.11916.pdf">(Kojima et al., 2023)</a> to grab the answer. Note that we <b>DID NOT</b> use "Let's think step-by-step" to invoke explicit CoT.
+      </p>
+      <div class="table-container">
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+          <tr>
+            <th>Model</th>
+            <th>Arc-Challenge</th>
+            <th>Winogrande</th>
+            <th>Hellaswag</th>
+          </tr>
+          <tr>
+            <td>ChatGPT (Reported)</td>
+            <td>84.6*</td>
+            <td>66.8*</td>
+            <td>72.0*</td>
+          </tr>
+          <tr>
+            <td>ChatGPT (Reproduced)</td>
+            <td>84.1</td>
+            <td>63.1</td>
+            <td>79.5</td>
+          </tr>
+          <tr>
+            <td>Mistral-7B-Instruct</td>
+            <td>68.1</td>
+            <td>56.4</td>
+            <td>45.6</td>
+          </tr>
+          <tr>
+            <td>Qwen1.5-7B-Chat</td>
+            <td>79.3</td>
+            <td>59.4</td>
+            <td>69.3</td>
+          </tr>
+          <tr>
+            <td>SeaLLM-7B-v2</td>
+            <td>82.5</td>
+            <td>68.3</td>
+            <td>80.9</td>
+          </tr>
+          <tr>
+            <td>SeaLLM-7B-v2.5</td>
+            <td>86.5</td>
+            <td>75.4</td>
+            <td>91.6</td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
 </section>
 
