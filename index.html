@@ -364,10 +364,6 @@
         According to the <a href="https://huggingface.co/spaces/SeaLLMs/SeaExam_leaderboard">SeaExam leaderboard</a>, which evaluates model performance through human-exam style questions in Southeast Asian languages, the latest SeaLLMs-v2.5 is ranked at the top among open-source models of similar size.
         <gradio-app src="https://seallms-seaexam-leaderboard.hf.space"></gradio-app>
       </p>
-      <p>
-        M3Exam was evaluated using the <a href="https://github.com/DAMO-NLP-SG/M3Exam">standard prompting implementation</a>, 
-        while 0-shot VMLU was run with <a href="https://github.com/DAMO-NLP-SG/SeaLLMs/blob/main/evaluation/vmlu/vmlu_run.py">vmlu_run.py</a> for SeaLLMs.
-      </p>
     </div>
     <!-- math reasoning -->
     <h2 class="title is-4">Multilingual Math Reasoning</h2>
@@ -467,7 +463,7 @@
       <gradio-app src="https://seallms-sea-bench-simple.hf.space"></gradio-app>
     </div>
     <!-- commonsense reasoning -->
-    <h2 class="title is-4">Multilingual Zero-shot Commonsense Reasoning</h2>
+    <h2 class="title is-4">Zero-shot Commonsense Reasoning</h2>
     <div class="content has-text-justified">
       <p>
         We compare <a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5"><b>SeaLLM-7B-v2.5</b></a> with ChatGPT and Mistral-7B-instruct on various zero-shot commonsense benchmarks (Arc-Challenge, Winogrande and Hellaswag). We use the 2-stage technique in <a href="https://arxiv.org/pdf/2205.11916.pdf">(Kojima et al., 2023)</a> to grab the answer. Note that we <b>DID NOT</b> use "Let's think step-by-step" to invoke explicit CoT.
