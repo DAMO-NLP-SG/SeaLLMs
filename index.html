@@ -545,7 +545,9 @@
             <td><a href="https://huggingface.co/google/gemma-7b">gemma-7b</a></td>
             <td>8192</td>
             <td>256000</td>
-            <td><pre><code><|im_start|>user
+            <td>
+              Add <code>&lt;bos&gt;</code> at start if your tokenizer does not do so!
+              <pre><code><|im_start|>user
 {content}&lt;eos&gt;
 <|im_start|>assistant
 {content}&lt;eos&gt;</code></pre></td>
@@ -555,7 +557,9 @@
             <td><a href="https://huggingface.co/mistralai/Mistral-7B-v0.1">Mistral-7B-v0.1</a></td>
             <td>8192</td>
             <td>48384</td>
-            <td><pre><code><|im_start|>user
+            <td>
+              Add <code>&lt;bos&gt;</code> at start if your tokenizer does not do so!
+              <pre><code><|im_start|>user
 {content}&lt;/s&gt;<|im_start|>assistant
 {content}&lt;/s&gt;</code></pre></td>
           </tr>
