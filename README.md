@@ -212,7 +212,8 @@ If you find our project useful, hope you can star our repo and cite our work as 
             Qingyu Tan, Liying Cheng, Guanzheng Chen, Yue Deng, Sen Yang,
             Chaoqun Liu, Hang Zhang, Lidong Bing},
   title = {SeaLLMs - Large Language Models for Southeast Asia},
-  year = 2023,
-  Eprint = {arXiv:2312.00738},
+  year = {2024},
+  booktitle = {ACL},
+  url = {https://arxiv.org/pdf/2312.00738},
 }
 ```
