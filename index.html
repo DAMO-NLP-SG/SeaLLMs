@@ -6,7 +6,7 @@
         content="SeaLLMs - Large Language Models for Southeast Asia">
   <meta name="keywords" content="SeaLLM, SeaLMMM">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SeaLLMs (v2.5) - Large Language Models for Southeast Asia</title>
+  <title>SeaLLMs - Large Language Models for Southeast Asia</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -41,10 +41,7 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 
-  <script
-	type="module"
-	src="https://gradio.s3-us-west-2.amazonaws.com/4.19.2/gradio.js"
-  ></script>
+
 
   
 
@@ -151,7 +148,7 @@
               </span>
               <!-- Demo Link. -->
               <span class="link-block">
-                <a href="hhttps://huggingface.co/spaces/SeaLLMs/SeaLLM-7B-v2.5"
+                <a href="https://huggingface.co/spaces/SeaLLMs/SeaLLM-Chat"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       🤗
@@ -171,7 +168,7 @@
               </span>
               <!-- Models Link. -->
               <span class="link-block">
-                <a href="https://huggingface.co/collections/SeaLLMs/seallms-65be16f92e67686440ae29f3"
+                <a href="https://huggingface.co/SeaLLMs/SeaLLM3-7B-Chat"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <!-- <i class="far fa-images"></i> -->
@@ -205,16 +202,22 @@
     <div class="hero-body">
       <h4 class="subtitle has-text-centered">
         🔥<span style="color: #ff3860">[NEW!]</span> 
-        <a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5">SeaLLM-7B-v2.5</a> is released with SoTA in world knowledge and math reasoning.
+        <a href="https://huggingface.co/SeaLLMs/SeaLLM3-7B-Chat">SeaLLM3</a> is released with SoTA performance in various tasks and specifically enhanced to be more trustworthy.
         <br>
+        <!--
         🔥<span style="color: #ff3860">[HOT!]</span> 
         <a href="https://huggingface.co/SeaLLMs/SeaLMMM-7B-v0.1">SeaLMMM-7B-v0.1</a> is introduced with <b>Multimodal</b> Multilingual capabilities in SEA languages.
+        -->
       </h4>
-      <gradio-app src="https://seallms-seallm-7b-v2-5-simple.hf.space"></gradio-app>
+      <script
+      type="module"
+      src="https://gradio.s3-us-west-2.amazonaws.com/4.26.0/gradio.js">
+      </script>
+      <gradio-app src="https://seallms-seallm-chat.hf.space"></gradio-app>
+
     </div>
   </div>
 </section>
-
 
 
 
@@ -226,9 +229,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We introduce <a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5">SeaLLM-7B-v2.5</a>, the state-of-the-art multilingual LLM for Southeast Asian (SEA) languages 🇬🇧 🇨🇳 🇻🇳 🇮🇩 🇹🇭 🇲🇾 🇰🇭 🇱🇦 🇲🇲 🇵🇭. 
-            It outperforms comparable baselines across diverse multilingual tasks, from world knowledge, math reasoning, instruction following, etc.
-            It also surpasses ChatGPT-3.5 in various knowledge and reasoning bechmarks in multiple non-Latin languages (Thai, Khmer, Lao and Burmese), while remaining lightweight and open-source.
+            We introduce SeaLLM3, the latest series of the SeaLLMs (Large Language Models for Southeast Asian languages) family. It achieves state-of-the-art performance among models with similar sizes, excelling across a diverse array of tasks such as world knowledge, mathematical reasoning, translation, and instruction following. In the meantime, it was specifically enhanced to be more trustworthy, exhibiting reduced hallucination and providing safe responses, particularly in queries closed related to Southeast Asian culture.
           </p>
           <p>
             <a href="https://huggingface.co/collections/SeaLLMs/seallms-65be16f92e67686440ae29f3">SeaLLMs</a> is a continuously iterated and improved series of language models
@@ -264,100 +265,122 @@
   <div class="container is-max-desktop">
     <!-- <h2 class="title is-3">Evaluation</h2> -->
 
-    <h2 class="title is-4">World Knowledge</h2>
+    <h2 class="title is-4">Multilingual World Knowledge - M3Exam</h2>
     <div class="content has-text-justified">
-      <p>
-        We evaluate models on 3 benchmarks following the recommended default setups: 5-shot MMLU for Eng, 3-shot <a href="https://arxiv.org/pdf/2306.05179.pdf">M3Exam</a>
-        for Eng, Zho, Vie, Ind, Tha, and zero-shot <a href="https://vmlu.ai/">VMLU</a> for Vie.
-      </p>
-      <p>
-        M3Exam was evaluated using the <a href="https://github.com/DAMO-NLP-SG/M3Exam">standard prompting implementation</a>, 
-        while 0-shot VMLU was run with <a href="https://github.com/DAMO-NLP-SG/SeaLLMs/blob/main/evaluation/vmlu/vmlu_run.py">vmlu_run.py</a> for SeaLLMs.
-      </p>
+      <p><a href="https://arxiv.org/abs/2306.05179">M3Exam</a> consists of local exam questions collected from each country. It reflects the model's world knowledge (e.g., with language or social science subjects) and reasoning abilities (e.g., with mathematics or natural science subjects).</p>
+      
       <div class="table-container">
         <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-          <!-- Your table content -->
-          <tr>
-            <th>Model</th>
-            <th>Langs</th>
-            <th>Eng<br><a href="https://arxiv.org/abs/2009.03300">MMLU</a><br>5 shots</th>
-            <th>Eng<br><a href="https://github.com/DAMO-NLP-SG/M3Exam/tree/main">M3exam</a><br>3 shots</th>
-            <th>Zho<br>M3exam<br>3 shots</th>
-            <th>Vie<br>M3exam<br>3 shots</th>
-            <th>Vie<br><a href="https://vmlu.ai/leaderboard">VMLU</a><br>0 shots</th>
-            <th>Ind<br>M3exam<br>3 shots</th>
-            <th>Tha<br>M3exam<br>3 shots</th>
-          </tr>
-          <tr>
-            <td>ChatGPT-3.5</td>
-            <td>Multi</td>
-            <td><b>68.90</b></td>
-            <td>75.46</td>
-            <td>60.20</td>
-            <td>58.64</td>
-            <td>46.32</td>
-            <td>49.27</td>
-            <td>37.41</td>
-          </tr>
-          <tr>
-            <td><a href="https://huggingface.co/Viet-Mistral/Vistral-7B-Chat">Vistral-7B-chat</a></td>
-            <td>Mono</td>
-            <td>56.86</td>
-            <td>67.00</td>
-            <td>44.56</td>
-            <td>54.33</td>
-            <td>50.03</td>
-            <td>36.49</td>
-            <td>25.27</td>
-          </tr>
-          <tr>
-            <td><a href="https://huggingface.co/Qwen/Qwen1.5-7B-Chat">Qwen1.5-7B-chat</a></td>
-            <td>Multi</td>
-            <td>61.00</td>
-            <td>52.07</td>
-            <td><b>81.96</b></td>
-            <td>43.38</td>
-            <td>45.02</td>
-            <td>24.29</td>
-            <td>20.25</td>
-          </tr>
-          <tr>
-            <td><a href="https://huggingface.co/sail/Sailor-7B">SailorLM-7B</a></td>
-            <td>Multi</td>
-            <td>52.72</td>
-            <td>59.76</td>
-            <td>67.74</td>
-            <td>50.14</td>
-            <td> --- </td>
-            <td>39.53</td>
-            <td>37.73</td>
-          </tr>
-          <tr>
-            <td><a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2">SeaLLM-7B-v2</a></td>
-            <td>Multi</td>
-            <td>61.89</td>
-            <td>70.91</td>
-            <td>55.43</td>
-            <td>51.15</td>
-            <td>45.74</td>
-            <td>42.25</td>
-            <td>35.52</td>
-          </tr>
-          <tr>
-            <td><a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5"><b>SeaLLM-7B-v2.5</b></a></td>
-            <td><b>Multi</b></td>
-            <td>64.05</td>
-            <td><b>76.87</b></td>
-            <td>62.54</td>
-            <td><b>63.11</b></td>
-            <td><b>53.30</b></td>
-            <td><b>48.64</b></td>
-            <td><b>46.86</b></td>
-          </tr>
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>en</th>
+              <th>zh</th>
+              <th>id</th>
+              <th>th</th>
+              <th>vi</th>
+              <th>avg</th>
+              <th>avg_sea</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sailor-7B-Chat</td>
+              <td>0.66</td>
+              <td>0.652</td>
+              <td>0.475</td>
+              <td>0.462</td>
+              <td>0.513</td>
+              <td>0.552</td>
+              <td>0.483</td>
+            </tr>
+            <tr>
+              <td>gemma-7b</td>
+              <td>0.732</td>
+              <td>0.519</td>
+              <td>0.475</td>
+              <td>0.46</td>
+              <td>0.594</td>
+              <td>0.556</td>
+              <td>0.510</td>
+            </tr>
+            <tr>
+              <td>SeaLLM-7B-v2.5</td>
+              <td>0.758</td>
+              <td>0.581</td>
+              <td>0.499</td>
+              <td>0.502</td>
+              <td>0.622</td>
+              <td>0.592</td>
+              <td>0.541</td>
+            </tr>
+            <tr>
+              <td>Qwen2-7B</td>
+              <td>0.815</td>
+              <td>0.874</td>
+              <td>0.53</td>
+              <td>0.479</td>
+              <td>0.628</td>
+              <td>0.665</td>
+              <td>0.546</td>
+            </tr>
+            <tr>
+              <td>Qwen2-7B-Instruct</td>
+              <td>0.809</td>
+              <td>0.88</td>
+              <td>0.558</td>
+              <td>0.555</td>
+              <td>0.624</td>
+              <td>0.685</td>
+              <td>0.579</td>
+            </tr>
+            <tr>
+              <td>Sailor-14B</td>
+              <td>0.748</td>
+              <td>0.84</td>
+              <td>0.536</td>
+              <td>0.528</td>
+              <td>0.621</td>
+              <td>0.655</td>
+              <td>0.562</td>
+            </tr>
+            <tr>
+              <td>Sailor-14B-Chat</td>
+              <td>0.749</td>
+              <td>0.843</td>
+              <td>0.553</td>
+              <td>0.566</td>
+              <td>0.637</td>
+              <td>0.67</td>
+              <td>0.585</td>
+            </tr>
+            <tr>
+              <td>SeaLLM3-7B</td>
+              <td>0.814</td>
+              <td>0.866</td>
+              <td>0.549</td>
+              <td>0.52</td>
+              <td>0.628</td>
+              <td>0.675</td>
+              <td>0.566</td>
+            </tr>
+            <tr>
+              <td>SeaLLM3-7B-Chat</td>
+              <td>0.809</td>
+              <td>0.874</td>
+              <td>0.558</td>
+              <td>0.569</td>
+              <td>0.649</td>
+              <td>0.692</td>
+              <td>0.592</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
+
     <!-- seaexam -->
+    <!--
     <h2 class="title is-4">SeaExam Leaderboard</h2>
     <div class="content has-text-justified">
       <p>
@@ -365,153 +388,502 @@
         <gradio-app src="https://seallms-seaexam-leaderboard.hf.space"></gradio-app>
       </p>
     </div>
-    <!-- math reasoning -->
-    <h2 class="title is-4">Multilingual Math Reasoning</h2>
+    -->
+
+    <!-- SeaBench -->
+    <h2 class="title is-4">Multilingual Instruction-following Capability - SeaBench</h2>
     <div class="content has-text-justified">
-      <p>
-        <a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5"><b>SeaLLM-7B-v2.5</b></a> achieves with 78.5 and 34.9 in GSM8K and MATH with zero-shot CoT reasoning, making it outperforms GPT-3.5 in MATH.
-        It also outperforms GPT-3.5 in all GSM8K and MATH benchmark as translated into 4 SEA languages (🇨🇳 🇻🇳 🇮🇩 🇹🇭). 
-      </p>
+      <p>SeaBench consists of multi-turn human instructions spanning various task types. It evaluates chat-based models on their ability to follow human instructions in both single and multi-turn settings and assesses their performance across different task types. The dataset and corresponding evaluation code will be released soon!</p>
+      
       <div class="table-container">
         <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-          <!-- Your table content -->
-          <!-- GSM8K-en	MATH-en	GSM8K-zh	MATH-zh	GSM8K-vi	MATH-vi	GSM8K-id	MATH-id	GSM8K-th	MATH-th -->
-          <tr>
-            <th>Model</th>
-            <th>Eng<br>GSM8K</th><th>Eng<br>MATH</th>
-            <th>Zho<br>GSM8K</th><th>Zho<br>MATH</th>
-            <th>Vie<br>GSM8K</th><th>Vie<br>MATH</th>
-            <th>Ind<br>GSM8K</th><th>Ind<br>MATH</th>
-            <th>Tha<br>GSM8K</th><th>Tha<br>MATH</th>
-          </tr>
-          <tr>
-            <td>ChatGPT-3.5</td>
-            <td><b>80.8</b></td>
-            <td>34.1</td>
-            <td>48.2</td>
-            <td>21.5</td>
-            <td>55.0</td>
-            <td>26.5</td>
-            <td>64.3</td>
-            <td>26.4</td>
-            <td>35.8</td>
-            <td>18.1</td>
-          </tr>
-          <tr>
-            <td>Vistral-7B-Chat</td>
-            <td>48.2</td>
-            <td>12.5</td>
-            <td></td>
-            <td></td>
-            <td>48.7</td>
-            <td>3.1</td>
-          </tr>
-          <tr>
-            <td>Qwen1.5-7B-chat</td>
-            <td>56.8</td>
-            <td>15.3</td>
-            <td>40.0</td>
-            <td>2.7</td>
-            <td>37.7</td>
-            <td>9.0</td>
-            <td>36.9</td>
-            <td>7.7</td>
-            <td>21.9</td>
-            <td>4.7</td>
-          </tr>
-          <tr>
-            <td>SeaLLM-7B-v2</td>
-            <td>78.2</td>
-            <td>27.5</td>
-            <td>53.7</td>
-            <td>17.6</td>
-            <td>69.9</td>
-            <td>23.8</td>
-            <td>71.5</td>
-            <td>24.4</td>
-            <td>59.6</td>
-            <td>22.4</td>
-          </tr>
-          <tr>
-            <td><a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5"><b>SeaLLM-7B-v2.5</b></a></td>
-            <td>78.5</td>
-            <td><b>34.9</b></td>
-            <td><b>51.3</b></td>
-            <td><b>22.1</b></td>
-            <td><b>72.3</b></td>
-            <td><b>30.2</b></td>
-            <td><b>71.5</b></td>
-            <td><b>30.1</b></td>
-            <td><b>62.0</b></td>
-            <td><b>28.4</b></td>
-          </tr>
-
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>id<br>turn1</th>
+              <th>id<br>turn2</th>
+              <th>id<br>avg</th>
+              <th>th<br>turn1</th>
+              <th>th<br>turn2</th>
+              <th>th<br>avg</th>
+              <th>vi<br>turn1</th>
+              <th>vi<br>turn2</th>
+              <th>vi<br>avg</th>
+              <th>avg</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Qwen2-7B-Instruct</td>
+              <td>5.93</td>
+              <td>5.84</td>
+              <td>5.89</td>
+              <td>5.47</td>
+              <td>5.20</td>
+              <td>5.34</td>
+              <td>6.17</td>
+              <td>5.60</td>
+              <td>5.89</td>
+              <td>5.70</td>
+            </tr>
+            <tr>
+              <td>SeaLLM-7B-v2.5</td>
+              <td>6.27</td>
+              <td>4.96</td>
+              <td>5.62</td>
+              <td>5.79</td>
+              <td>3.82</td>
+              <td>4.81</td>
+              <td>6.02</td>
+              <td>4.02</td>
+              <td>5.02</td>
+              <td>5.15</td>
+            </tr>
+            <tr>
+              <td>Sailor-14B-Chat</td>
+              <td>5.26</td>
+              <td>5.53</td>
+              <td>5.40</td>
+              <td>4.62</td>
+              <td>4.36</td>
+              <td>4.49</td>
+              <td>5.31</td>
+              <td>4.74</td>
+              <td>5.03</td>
+              <td>4.97</td>
+            </tr>
+            <tr>
+              <td>Sailor-7B-Chat</td>
+              <td>4.60</td>
+              <td>4.04</td>
+              <td>4.32</td>
+              <td>3.94</td>
+              <td>3.17</td>
+              <td>3.56</td>
+              <td>4.82</td>
+              <td>3.62</td>
+              <td>4.22</td>
+              <td>4.03</td>
+            </tr>
+            <tr>
+              <td>SeaLLM3-7B-Chat</td>
+              <td>6.73</td>
+              <td>6.59</td>
+              <td>6.66</td>
+              <td>6.48</td>
+              <td>5.90</td>
+              <td>6.19</td>
+              <td>6.34</td>
+              <td>5.79</td>
+              <td>6.07</td>
+              <td>6.31</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
-    <!-- Instruction following -->
-    <h2 class="title is-4">Multilingual Instruction Following</h2>
+
+    <h2 class="title is-4">Multilingual Math</h2>
     <div class="content has-text-justified">
-      <p>
-        <a href="https://huggingface.co/datasets/SeaLLMs/Sea-bench">Sea-Bench</a> is a set of categorized instruction test sets to measure models' ability as an assistant that is specifically focused on 9 SEA languages, 
-        including non-Latin low-resource languages. Sea-Bench's model responses are rated by GPT-4 following MT-bench LLM-judge procedure.
-        <br>
-        As shown, <a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5"><b>SeaLLM-7B-v2.5</b></a> reaches GPT-3.5 level of performance in many common SEA languages (Eng, Zho, Vie, Ind, Tha, Msa) 
-        and far-surpasses it in low-resource non-Latin languages (Mya, Lao, Khm).
-      </p>
-      <!-- <img src="./static/images/fig_sea_bench_side_by_side.png" /> -->
-      <gradio-app src="https://seallms-sea-bench-simple.hf.space"></gradio-app>
-    </div>
-    <!-- commonsense reasoning -->
-    <h2 class="title is-4">Zero-shot Commonsense Reasoning</h2>
-    <div class="content has-text-justified">
-      <p>
-        We compare <a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5"><b>SeaLLM-7B-v2.5</b></a> with ChatGPT and Mistral-7B-instruct on various zero-shot commonsense benchmarks (Arc-Challenge, Winogrande and Hellaswag). We use the 2-stage technique in <a href="https://arxiv.org/pdf/2205.11916.pdf">(Kojima et al., 2023)</a> to grab the answer. Note that we <b>DID NOT</b> use "Let's think step-by-step" to invoke explicit CoT.
-      </p>
+      <p>We evaluate the multilingual math capability using the MGSM dataset. MGSM originally contains Chinese and Thai testing sets only, we use Google Translate to translate the same English questions into other SEA languages. Note that we adopt the tradition of each country to represent the number, e.g., in Indonesian and Vietnamese, dots are used as thousands separators and commas as decimal separators, the opposite of the English system.</p>
+      
       <div class="table-container">
         <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-          <tr>
-            <th>Model</th>
-            <th>Arc-Challenge</th>
-            <th>Winogrande</th>
-            <th>Hellaswag</th>
-          </tr>
-          <tr>
-            <td>ChatGPT (Reported)</td>
-            <td>84.6*</td>
-            <td>66.8*</td>
-            <td>72.0*</td>
-          </tr>
-          <tr>
-            <td>ChatGPT (Reproduced)</td>
-            <td>84.1</td>
-            <td>63.1</td>
-            <td>79.5</td>
-          </tr>
-          <tr>
-            <td>Mistral-7B-Instruct</td>
-            <td>68.1</td>
-            <td>56.4</td>
-            <td>45.6</td>
-          </tr>
-          <tr>
-            <td>Qwen1.5-7B-Chat</td>
-            <td>79.3</td>
-            <td>59.4</td>
-            <td>69.3</td>
-          </tr>
-          <tr>
-            <td>SeaLLM-7B-v2</td>
-            <td>82.5</td>
-            <td>68.3</td>
-            <td>80.9</td>
-          </tr>
-          <tr>
-            <td>SeaLLM-7B-v2.5</td>
-            <td>86.5</td>
-            <td>75.4</td>
-            <td>91.6</td>
-          </tr>
+          <thead>
+            <tr>
+              <th>MGSM</th>
+              <th>en</th>
+              <th>id</th>
+              <th>ms</th>
+              <th>th</th>
+              <th>vi</th>
+              <th>zh</th>
+              <th>avg</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sailor-7B-Chat</td>
+              <td>33.6</td>
+              <td>22.4</td>
+              <td>22.4</td>
+              <td>21.6</td>
+              <td>25.2</td>
+              <td>29.2</td>
+              <td>25.7</td>
+            </tr>
+            <tr>
+              <td>Meta-Llama-3-8B-Instruct</td>
+              <td>77.6</td>
+              <td>48</td>
+              <td>57.6</td>
+              <td>56</td>
+              <td>46.8</td>
+              <td>58.8</td>
+              <td>57.5</td>
+            </tr>
+            <tr>
+              <td>glm-4-9b-chat</td>
+              <td>72.8</td>
+              <td>53.6</td>
+              <td>53.6</td>
+              <td>34.8</td>
+              <td>52.4</td>
+              <td>70.8</td>
+              <td>56.3</td>
+            </tr>
+            <tr>
+              <td>Qwen1.5-7B-Chat</td>
+              <td>64</td>
+              <td>34.4</td>
+              <td>38.4</td>
+              <td>25.2</td>
+              <td>36</td>
+              <td>53.6</td>
+              <td>41.9</td>
+            </tr>
+            <tr>
+              <td>Qwen2-7B-instruct</td>
+              <td>82</td>
+              <td>66.4</td>
+              <td>62.4</td>
+              <td>58.4</td>
+              <td>64.4</td>
+              <td>76.8</td>
+              <td>68.4</td>
+            </tr>
+            <tr>
+              <td>aya-23-8B</td>
+              <td>28.8</td>
+              <td>16.4</td>
+              <td>14.4</td>
+              <td>2</td>
+              <td>16</td>
+              <td>12.8</td>
+              <td>15.1</td>
+            </tr>
+            <tr>
+              <td>gemma-1.1-7b-it</td>
+              <td>58.8</td>
+              <td>32.4</td>
+              <td>34.8</td>
+              <td>31.2</td>
+              <td>39.6</td>
+              <td>35.2</td>
+              <td>38.7</td>
+            </tr>
+            <tr>
+              <td>SeaLLM-7B-v2.5</td>
+              <td>79.6</td>
+              <td>69.2</td>
+              <td>70.8</td>
+              <td>61.2</td>
+              <td>66.8</td>
+              <td>62.4</td>
+              <td>68.3</td>
+            </tr>
+            <tr>
+              <td>SeaLLM3-7B-Chat</td>
+              <td>74.8</td>
+              <td>71.2</td>
+              <td>70.8</td>
+              <td>71.2</td>
+              <td>71.2</td>
+              <td>79.6</td>
+              <td>73.1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2 class="title is-4">Translation</h2>
+    <div class="content has-text-justified">
+      <p>We use the test sets from Flores-200 for evaluation and report the zero-shot chrF scores for translations between every pair of languages. Each row in the table below presents the average results of translating from various source languages into the target languages. The last column displays the overall average results of translating from any language to any other language for each model.</p>
+      
+      <div class="table-container">
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>en</th>
+              <th>id</th>
+              <th>jv</th>
+              <th>km</th>
+              <th>lo</th>
+              <th>ms</th>
+              <th>my</th>
+              <th>ta</th>
+              <th>th</th>
+              <th>tl</th>
+              <th>vi</th>
+              <th>zh</th>
+              <th>avg</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Meta-Llama-3-8B-Instruct</td>
+              <td>51.54</td>
+              <td>49.03</td>
+              <td>22.46</td>
+              <td>15.34</td>
+              <td>5.42</td>
+              <td>46.72</td>
+              <td>21.24</td>
+              <td>32.09</td>
+              <td>35.75</td>
+              <td>40.80</td>
+              <td>39.31</td>
+              <td>14.87</td>
+              <td>31.22</td>
+            </tr>
+            <tr>
+              <td>Qwen2-7B-Instruct</td>
+              <td>50.36</td>
+              <td>47.55</td>
+              <td>29.36</td>
+              <td>19.26</td>
+              <td>11.06</td>
+              <td>42.43</td>
+              <td>19.33</td>
+              <td>20.04</td>
+              <td>36.07</td>
+              <td>37.91</td>
+              <td>39.63</td>
+              <td>22.87</td>
+              <td>31.32</td>
+            </tr>
+            <tr>
+              <td>Sailor-7B-Chat</td>
+              <td>49.40</td>
+              <td>49.78</td>
+              <td>28.33</td>
+              <td>2.68</td>
+              <td>6.85</td>
+              <td>47.75</td>
+              <td>5.35</td>
+              <td>18.23</td>
+              <td>38.92</td>
+              <td>29.00</td>
+              <td>41.76</td>
+              <td>20.87</td>
+              <td>28.24</td>
+            </tr>
+            <tr>
+              <td>SeaLLM-7B-v2.5</td>
+              <td>55.09</td>
+              <td>53.71</td>
+              <td>18.13</td>
+              <td>18.09</td>
+              <td>15.53</td>
+              <td>51.33</td>
+              <td>19.71</td>
+              <td>26.10</td>
+              <td>40.55</td>
+              <td>45.58</td>
+              <td>44.56</td>
+              <td>24.18</td>
+              <td>34.38</td>
+            </tr>
+            <tr>
+              <td>SeaLLM3-7B-Chat</td>
+              <td>54.68</td>
+              <td>52.52</td>
+              <td>29.86</td>
+              <td>27.30</td>
+              <td>26.34</td>
+              <td>45.04</td>
+              <td>21.54</td>
+              <td>31.93</td>
+              <td>41.52</td>
+              <td>38.51</td>
+              <td>43.78</td>
+              <td>26.10</td>
+              <td>36.52</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2 class="title is-4">Hallucination</h2>
+    <div class="content has-text-justified">
+      <p>Performance of whether a model can refuse questions about the non-existing entity. The following is the F1 score. We use refusal as the positive label. Our test set consists of ~1k test samples per language. Each unanswerable question is generated by GPT4o. The ratio of answerable and unanswerable questions are 1:1. We define keywords to automatically detect whether a model-generated response is a refusal response.</p>
+      
+      <div class="table-container">
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th>Refusal-F1 Scores</th>
+              <th>en</th>
+              <th>zh</th>
+              <th>vi</th>
+              <th>th</th>
+              <th>id</th>
+              <th>avg</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Qwen1.5-7B-Instruct</td>
+              <td>53.85</td>
+              <td>51.70</td>
+              <td>52.85</td>
+              <td>35.50</td>
+              <td>58.40</td>
+              <td>50.46</td>
+            </tr>
+            <tr>
+              <td>Qwen2-7B-Instruct</td>
+              <td>58.79</td>
+              <td>33.08</td>
+              <td>56.21</td>
+              <td>44.60</td>
+              <td>55.98</td>
+              <td>49.732</td>
+            </tr>
+            <tr>
+              <td>SeaLLM-7B-v2.5</td>
+              <td>12.90</td>
+              <td>0.77</td>
+              <td>2.45</td>
+              <td>19.42</td>
+              <td>0.78</td>
+              <td>7.26</td>
+            </tr>
+            <tr>
+              <td>Sailor-7B-Chat</td>
+              <td>33.49</td>
+              <td>18.82</td>
+              <td>5.19</td>
+              <td>9.68</td>
+              <td>16.42</td>
+              <td>16.72</td>
+            </tr>
+            <tr>
+              <td>glm-4-9b-chat</td>
+              <td>44.48</td>
+              <td>37.89</td>
+              <td>18.66</td>
+              <td>4.27</td>
+              <td>1.97</td>
+              <td>21.45</td>
+            </tr>
+            <tr>
+              <td>aya-23-8B</td>
+              <td>6.38</td>
+              <td>0.79</td>
+              <td>2.83</td>
+              <td>1.98</td>
+              <td>14.80</td>
+              <td>5.36</td>
+            </tr>
+            <tr>
+              <td>Llama-3-8B-Instruct</td>
+              <td>72.08</td>
+              <td>0.00</td>
+              <td>1.23</td>
+              <td>0.80</td>
+              <td>3.91</td>
+              <td>15.60</td>
+            </tr>
+            <tr>
+              <td>gemma-1.1-7b-it</td>
+              <td>52.39</td>
+              <td>27.74</td>
+              <td>23.96</td>
+              <td>22.97</td>
+              <td>31.72</td>
+              <td>31.76</td>
+            </tr>
+            <tr>
+              <td>SeaLLM3-7B-Chat</td>
+              <td>71.36</td>
+              <td>78.39</td>
+              <td>77.93</td>
+              <td>61.31</td>
+              <td>68.95</td>
+              <td>71.588</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2 class="title is-4">Safety</h2>
+    <div class="content has-text-justified">
+      <p>Multijaildataset consists of harmful prompts in multiple languages. We take those relevant prompts in SEA languages here and report their safe rate (the higher the better).</p>
+      
+      <div class="table-container">
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>en</th>
+              <th>jv</th>
+              <th>th</th>
+              <th>vi</th>
+              <th>zh</th>
+              <th>avg</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Qwen2-7B-Instruct</td>
+              <td>0.8857</td>
+              <td>0.4381</td>
+              <td>0.6381</td>
+              <td>0.7302</td>
+              <td>0.873</td>
+              <td>0.713</td>
+            </tr>
+            <tr>
+              <td>Sailor-7B-Chat</td>
+              <td>0.7873</td>
+              <td>0.5492</td>
+              <td>0.6222</td>
+              <td>0.6762</td>
+              <td>0.7619</td>
+              <td>0.6794</td>
+            </tr>
+            <tr>
+              <td>Meta-Llama-3-8B-Instruct</td>
+              <td>0.8825</td>
+              <td>0.2635</td>
+              <td>0.7111</td>
+              <td>0.6984</td>
+              <td>0.7714</td>
+              <td>0.6654</td>
+            </tr>
+            <tr>
+              <td>Sailor-14B-Chat</td>
+              <td>0.8698</td>
+              <td>0.3048</td>
+              <td>0.5365</td>
+              <td>0.6095</td>
+              <td>0.727</td>
+              <td>0.6095</td>
+            </tr>
+            <tr>
+              <td>glm-4-9b-chat</td>
+              <td>0.7714</td>
+              <td>0.2127</td>
+              <td>0.3016</td>
+              <td>0.6063</td>
+              <td>0.7492</td>
+              <td>0.52824</td>
+            </tr>
+            <tr>
+              <td>SeaLLM3-7B-Chat</td>
+              <td>0.8889</td>
+              <td>0.6000</td>
+              <td>0.7333</td>
+              <td>0.8381</td>
+              <td>0.927</td>
+              <td>0.7975</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
@@ -520,67 +892,17 @@
 
 
 <!-- model information -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- <h2 class="title is-3">Evaluation</h2> -->
-    <h2 class="title is-4">Model Information</h2>
-    <div class="content has-text-justified">
-      <p>
-        All <a href="https://huggingface.co/collections/SeaLLMs/seallms-65be16f92e67686440ae29f3">SeaLLM models</a> underwent continue-pretraining, instruction and alignment tuning to 
-        ensure not only their competitive performances in SEA languages, but also maintain high level of safety and legal compliance.
-        All models are trained with 32 A800 GPUs.
-      </p>
-      <div class="table-container">
-        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-          <!-- Your table content -->
-          <tr>
-            <th>Model</th>
-            <th>Backbone</th>
-            <th>Context Length</th>
-            <th>Vocab Size</th>
-            <th>Chat format</th>
-          </tr>
-          <tr>
-            <td><a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5">SeaLLM-7B-v2.5</a></td>
-            <td><a href="https://huggingface.co/google/gemma-7b">gemma-7b</a></td>
-            <td>8192</td>
-            <td>256000</td>
-            <td>
-              Add <code>&lt;bos&gt;</code> at start if your tokenizer does not do so!
-              <pre><code><|im_start|>user
-{content}&lt;eos&gt;
-<|im_start|>assistant
-{content}&lt;eos&gt;</code></pre></td>
-          </tr>
-          <tr>
-            <td><a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2">SeaLLM-7B-v2</a></td>
-            <td><a href="https://huggingface.co/mistralai/Mistral-7B-v0.1">Mistral-7B-v0.1</a></td>
-            <td>8192</td>
-            <td>48384</td>
-            <td>
-              Add <code>&lt;bos&gt;</code> at start if your tokenizer does not do so!
-              <pre><code><|im_start|>user
-{content}&lt;/s&gt;<|im_start|>assistant
-{content}&lt;/s&gt;</code></pre></td>
-          </tr>
-          <tr>
-            <td><a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2">SeaLLM-7B-v1</a></td>
-            <td><a href="https://huggingface.co/meta-llama/Llama-2-7b">Llama-2-7b</a></td>
-            <td>4096</td>
-            <td>48512</td>
-            <td>Same as Llama-2</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">Related Links</h2>
     <div class="content has-text-justified">
+      <p>
+        <a href="https://huggingface.co/SeaLLMs/SeaLLM3-7B-Chat">SeaLLM3</a> was released in July 2024. It achieves SOTA performance of diverse tasks while specifically enhanced to be more trustworthy, exhibiting reduced hallucination and providing safe response.
+      </p>
+
       <p>
         <a href="https://huggingface.co/SeaLLMs/SeaLLM-7B-v2">SeaLLM-7B-v2.5</a> was released in April 2024. It possesses outstanding abilities in world knowledge and math reasoning in both English and SEA languages.
       </p>
