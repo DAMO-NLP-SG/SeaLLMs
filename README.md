@@ -8,9 +8,9 @@
 <p align="center">
 <a href="https://damo-nlp-sg.github.io/SeaLLMs" target="_blank" rel="noopener"> Technical Blog</a>
 &nbsp;&nbsp;
-<a href="https://huggingface.co/SeaLLMs/SeaLLM-Chat-13b" target="_blank" rel="noopener"> 🤗 Tech Memo</a>
+<a href="https://huggingface.co/SeaLLMs/SeaLLM3-7B-Chat" target="_blank" rel="noopener"> 🤗 Tech Memo</a>
 &nbsp;&nbsp;
-<a href="https://huggingface.co/spaces/SeaLLMs/SeaLLM-Chat-13b" target="_blank" rel="noopener"> 🤗 DEMO</a>
+<a href="https://huggingface.co/spaces/SeaLLMs/SeaLLM-Chat" target="_blank" rel="noopener"> 🤗 DEMO</a>
 &nbsp;&nbsp;
 <a href="https://github.com/DAMO-NLP-SG/SeaLLMs" target="_blank" rel="noopener">Github</a>
 &nbsp;&nbsp;
