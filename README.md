@@ -19,7 +19,7 @@
 
 
 ## News
-- [Jul 9, 2024] 🔥 We released SeaLLM3-7B-Chat (https://huggingface.co/SeaLLMs/SeaLLM3-7B-Chat), the latest chat version of SeaLLM3, achieving SOTA performance of diverse tasks while specifically enhanced to be more trustworthy, exhibiting reduced hallucination and providing safe response. Try the model from the [demo](https://huggingface.co/spaces/SeaLLMs/SeaLLM-Chat)!
+- [Jul 9, 2024] 🔥 We released SeaLLMs-v3-7B-Chat (https://huggingface.co/SeaLLMs/SeaLLM3-7B-Chat), the latest chat version of SeaLLMs-v3, achieving SOTA performance of diverse tasks while specifically enhanced to be more trustworthy, exhibiting reduced hallucination and providing safe response. Try the model from the [demo](https://huggingface.co/spaces/SeaLLMs/SeaLLM-Chat)!
 - [Apr 12, 2024] ⭐️ We released SeaLLM-7B-v2.5 (https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5), the state-of-the-art multilingual LLM with competitive abilities in world knowledge and math reasoning.
 - [Feb 2, 2024] ⭐️ We introduced SeaLLM-7B-v2 (https://huggingface.co/SeaLLMs/SeaLLM-7B-v2), a multilingual LLM for SEA languages with advanced reasoning abilities.
 - [Dec 1, 2023] ⭐️ We rolled out SeaLLMs - a family of language models optimized for Southeast Asian (SEA) languages 🇬🇧 🇨🇳 🇻🇳 🇮🇩 🇹🇭 🇲🇾 🇰🇭 🇱🇦 🇲🇲 🇵🇭. 
